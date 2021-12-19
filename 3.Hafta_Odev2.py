@@ -32,7 +32,7 @@ data["TotalPrice"]=data["Quantity"]*data["Price"]
 
 today_date = dt.datetime(2011, 12, 11)
 #Creating CLTV dataset
-cltv_data = data.groupby('CustomerID').agg({'InvoiceDate': [lambda date: (date.max() - date.min()).days,
+cltv_data = data.groupby('Customer ID').agg({'InvoiceDate': [lambda date: (date.max() - date.min()).days,
                                                          lambda date: (today_date - date.min()).days],
                                          'Invoice': lambda num: num.nunique(),
                                          'TotalPrice': lambda TotalPrice: TotalPrice.sum()})
