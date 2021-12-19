@@ -13,7 +13,7 @@ pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', None)
 pd.set_option('display.float_format', lambda x: '%.5f' % x)
 #Loading datasets
-ddata = pd.read_excel("online_retail_II2010-2011.xlsx")
+data = pd.read_excel("online_retail_II2010-2011.xlsx")
 data=data[data["Country"]=="United Kingdom"]
 
 #Preprocessing Dataset
