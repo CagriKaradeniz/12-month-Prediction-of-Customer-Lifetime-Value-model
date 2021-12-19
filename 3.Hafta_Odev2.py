@@ -86,7 +86,7 @@ cltv12ay=ggf.customer_lifetime_value(bgf,
                                    discount_rate=0.01)
 cltv12ay=cltv12ay.reset_index()
 scaler = MinMaxScaler(feature_range=(0, 1))
-scaler.fit(cltv6ay[["clv"]])
+scaler.fit(cltv12ay[["clv"]])
 cltv12ay["scaled_clv"] = scaler.transform(cltv12ay[["clv"]])
 cltv12ay["segment"] = pd.qcut(cltv12ay["scaled_clv"], 4, labels=["D", "C", "B", "A"])
 cltv12ay.groupby("segment").agg({"count", "mean", "sum"})
